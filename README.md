@@ -1,9 +1,10 @@
 # PopView
-## 弹出自定义视图控件,使用简单,耦合度小
+## 弹出自定义视图控件,使用简单,耦合度小(popView)
 
 ![img](https://github.com/xiaohu036/PopView/blob/master/1.gif)
 
 处理了键盘遮挡的问题
+
 ![img](https://github.com/xiaohu036/PopView/blob/master/2.gif)
 
 ### 第一个图的使用方法
@@ -24,7 +25,7 @@ CGFloat SWidth = self.view.bounds.size.width;
 CGFloat SHeight = self.view.bounds.size.height;
 CGFloat height = 250;
 CGPoint locationPoint = CGPointMake(SWidth/2, SHeight/2+100);
-
+//定义出场动画
 CABasicAnimation *showAnima = [CABasicAnimation animationWithKeyPath:@"position"];
 showAnima.duration = 0.25;
 showAnima.fillMode = kCAFillModeForwards;
@@ -32,14 +33,14 @@ showAnima.fromValue = [NSValue valueWithCGPoint:CGPointMake(SWidth/2, -height/2)
 showAnima.toValue = [NSValue valueWithCGPoint:locationPoint];
 showAnima.removedOnCompletion = YES;
 
-
+//定义消失动画
 CABasicAnimation *hidenAnima = [CABasicAnimation animationWithKeyPath:@"position"];
 hidenAnima.duration = 0.25;
 hidenAnima.fillMode = kCAFillModeForwards;
 hidenAnima.fromValue = [NSValue valueWithCGPoint:locationPoint];
 hidenAnima.toValue = [NSValue valueWithCGPoint:CGPointMake(SWidth/2, SHeight+height/2)];
 
-
+//显示弹出
 self.loginView.center = locationPoint;
 self.loginView.backgroundColor = [UIColor whiteColor];
 PopView *popView = [PopView showPopSideContentView:self.loginView showAnimation:showAnima hidenAnimation:hidenAnima];
