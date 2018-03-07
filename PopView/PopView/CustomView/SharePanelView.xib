@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SharePanelView">
+            <rect key="frame" x="0.0" y="0.0" width="292" height="171"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHl-Hx-TjL" customClass="YLButton">
+                    <rect key="frame" x="6.5" y="56" width="60" height="80"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="QQ" image="qq_icon">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rKY-0L-wGr" customClass="YLButton">
+                    <rect key="frame" x="116.5" y="56" width="60" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="LmG-9l-c0p"/>
+                        <constraint firstAttribute="height" constant="80" id="hyb-F6-wqZ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="微信" image="weichat_icon">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2W3-ru-lI1" customClass="YLButton">
+                    <rect key="frame" x="226.5" y="56" width="60" height="80"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="微博" image="weibo_icon">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ids-If-tys">
+                    <rect key="frame" x="0.0" y="131" width="292" height="40"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="hLz-Bc-ppB"/>
+                    </constraints>
+                    <state key="normal" title="取      消"/>
+                    <connections>
+                        <action selector="cancelBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="L2v-rd-o5j"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分享" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FG9-Gd-ZLs">
+                    <rect key="frame" x="128.5" y="5" width="35" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="2W3-ru-lI1" firstAttribute="leading" secondItem="rKY-0L-wGr" secondAttribute="trailing" constant="50" id="0Bo-a2-bLM"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ids-If-tys" secondAttribute="trailing" id="Cee-H7-aIX"/>
+                <constraint firstItem="FG9-Gd-ZLs" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="FTy-8H-9cf"/>
+                <constraint firstItem="rKY-0L-wGr" firstAttribute="width" secondItem="MHl-Hx-TjL" secondAttribute="width" id="J10-lg-m3C"/>
+                <constraint firstItem="rKY-0L-wGr" firstAttribute="leading" secondItem="MHl-Hx-TjL" secondAttribute="trailing" constant="50" id="JVf-e9-AkN"/>
+                <constraint firstItem="rKY-0L-wGr" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="KKM-Rp-pqf"/>
+                <constraint firstItem="2W3-ru-lI1" firstAttribute="width" secondItem="MHl-Hx-TjL" secondAttribute="width" id="ScB-T5-8Re"/>
+                <constraint firstItem="rKY-0L-wGr" firstAttribute="top" secondItem="FG9-Gd-ZLs" secondAttribute="bottom" constant="30" id="V5k-RE-lbs"/>
+                <constraint firstItem="2W3-ru-lI1" firstAttribute="height" secondItem="MHl-Hx-TjL" secondAttribute="height" id="YaF-RH-zKT"/>
+                <constraint firstItem="2W3-ru-lI1" firstAttribute="centerY" secondItem="rKY-0L-wGr" secondAttribute="centerY" id="Z3t-6x-1XH"/>
+                <constraint firstItem="ids-If-tys" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="cby-iF-yVv"/>
+                <constraint firstItem="rKY-0L-wGr" firstAttribute="centerY" secondItem="MHl-Hx-TjL" secondAttribute="centerY" id="iqh-BP-g46"/>
+                <constraint firstItem="FG9-Gd-ZLs" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="qsr-w9-xaE"/>
+                <constraint firstItem="rKY-0L-wGr" firstAttribute="height" secondItem="MHl-Hx-TjL" secondAttribute="height" id="yKI-i4-wHh"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ids-If-tys" secondAttribute="bottom" id="z6S-3u-ybE"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="qqBtn" destination="MHl-Hx-TjL" id="LS4-Md-Fc7"/>
+                <outlet property="weiboBtn" destination="2W3-ru-lI1" id="FwR-9q-wZ6"/>
+                <outlet property="weichatBtn" destination="rKY-0L-wGr" id="Wmf-87-wWP"/>
+            </connections>
+            <point key="canvasLocation" x="-7" y="353.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="qq_icon" width="32" height="32"/>
+        <image name="weibo_icon" width="32" height="32"/>
+        <image name="weichat_icon" width="32" height="32"/>
+    </resources>
+</document>

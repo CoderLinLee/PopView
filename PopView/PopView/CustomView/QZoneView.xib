@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="QZoneView">
+            <rect key="frame" x="0.0" y="0.0" width="372" height="233"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wrG-fg-Mm6">
+                    <rect key="frame" x="342" y="20" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="TJq-9M-jKc"/>
+                        <constraint firstAttribute="height" constant="30" id="mBc-Zr-wld"/>
+                    </constraints>
+                    <state key="normal" image="close_icon"/>
+                    <connections>
+                        <action selector="closeBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="dgr-XF-UKj"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ds-u9-06V" customClass="YLButton">
+                    <rect key="frame" x="51.5" y="50" width="60" height="80"/>
+                    <state key="normal" title="说说" image="message_icon">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eMv-sM-5vb" customClass="YLButton">
+                    <rect key="frame" x="156.5" y="50" width="60" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="1Vj-zD-F4E"/>
+                        <constraint firstAttribute="height" constant="80" id="I7X-Sy-mz9"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="照片" image="photo_icon">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oII-6C-eSr" customClass="YLButton">
+                    <rect key="frame" x="261.5" y="50" width="60" height="80"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="视频" image="video_icon">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1d7-L0-oqx" customClass="YLButton">
+                    <rect key="frame" x="156.5" y="160" width="60" height="80"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="大头贴" image="face_icon">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2c8-VV-6sn" customClass="YLButton">
+                    <rect key="frame" x="51.5" y="160" width="60" height="80"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="签到" image="sign_icon">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="oII-6C-eSr" firstAttribute="centerY" secondItem="5Ds-u9-06V" secondAttribute="centerY" id="03m-Wk-Dlk"/>
+                <constraint firstItem="eMv-sM-5vb" firstAttribute="leading" secondItem="5Ds-u9-06V" secondAttribute="trailing" constant="45" id="1h1-xH-L8Y"/>
+                <constraint firstItem="1d7-L0-oqx" firstAttribute="height" secondItem="5Ds-u9-06V" secondAttribute="height" id="3XK-5L-Y0E"/>
+                <constraint firstItem="eMv-sM-5vb" firstAttribute="width" secondItem="5Ds-u9-06V" secondAttribute="width" id="69e-Qi-KQB"/>
+                <constraint firstItem="eMv-sM-5vb" firstAttribute="centerY" secondItem="5Ds-u9-06V" secondAttribute="centerY" id="A6e-OA-yKL"/>
+                <constraint firstItem="2c8-VV-6sn" firstAttribute="width" secondItem="5Ds-u9-06V" secondAttribute="width" id="AOj-eY-KEw"/>
+                <constraint firstItem="1d7-L0-oqx" firstAttribute="top" secondItem="eMv-sM-5vb" secondAttribute="bottom" constant="30" id="B1n-Cv-jm9"/>
+                <constraint firstItem="oII-6C-eSr" firstAttribute="leading" secondItem="eMv-sM-5vb" secondAttribute="trailing" constant="45" id="KAB-Bn-Tb9"/>
+                <constraint firstItem="eMv-sM-5vb" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="KjK-LG-OcG"/>
+                <constraint firstItem="oII-6C-eSr" firstAttribute="width" secondItem="5Ds-u9-06V" secondAttribute="width" id="Ql1-cn-U9m"/>
+                <constraint firstItem="2c8-VV-6sn" firstAttribute="trailing" secondItem="5Ds-u9-06V" secondAttribute="trailing" id="R5W-Py-02P"/>
+                <constraint firstAttribute="trailing" secondItem="wrG-fg-Mm6" secondAttribute="trailing" id="aRQ-LT-NLX"/>
+                <constraint firstItem="eMv-sM-5vb" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="50" id="b4N-xL-zCL"/>
+                <constraint firstItem="oII-6C-eSr" firstAttribute="height" secondItem="5Ds-u9-06V" secondAttribute="height" id="ffk-Fu-iaW"/>
+                <constraint firstItem="wrG-fg-Mm6" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="mpO-mK-TkL"/>
+                <constraint firstItem="1d7-L0-oqx" firstAttribute="top" secondItem="2c8-VV-6sn" secondAttribute="top" id="pHs-zH-J2f"/>
+                <constraint firstItem="eMv-sM-5vb" firstAttribute="height" secondItem="5Ds-u9-06V" secondAttribute="height" id="qLN-UK-CjQ"/>
+                <constraint firstItem="1d7-L0-oqx" firstAttribute="centerY" secondItem="2c8-VV-6sn" secondAttribute="centerY" id="qMB-4e-kJE"/>
+                <constraint firstItem="2c8-VV-6sn" firstAttribute="height" secondItem="5Ds-u9-06V" secondAttribute="height" id="qOS-b4-X3q"/>
+                <constraint firstItem="eMv-sM-5vb" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="rss-lR-UT0"/>
+                <constraint firstItem="1d7-L0-oqx" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="sC2-dN-Qgf"/>
+                <constraint firstItem="1d7-L0-oqx" firstAttribute="leading" secondItem="eMv-sM-5vb" secondAttribute="leading" id="xnw-wc-8Lv"/>
+                <constraint firstItem="1d7-L0-oqx" firstAttribute="width" secondItem="5Ds-u9-06V" secondAttribute="width" id="yAa-dY-FhI"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="faceBtn" destination="1d7-L0-oqx" id="5y3-Ws-Zf2"/>
+                <outlet property="messageBtn" destination="5Ds-u9-06V" id="xxb-7r-CEq"/>
+                <outlet property="photeBtn" destination="eMv-sM-5vb" id="4T4-ms-uzB"/>
+                <outlet property="signBtn" destination="2c8-VV-6sn" id="hiF-rF-n8d"/>
+                <outlet property="videoBtn" destination="oII-6C-eSr" id="t2u-my-NRq"/>
+            </connections>
+            <point key="canvasLocation" x="24" y="268.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="close_icon" width="24" height="24"/>
+        <image name="face_icon" width="32" height="32"/>
+        <image name="message_icon" width="32" height="32"/>
+        <image name="photo_icon" width="32" height="32"/>
+        <image name="sign_icon" width="32" height="32"/>
+        <image name="video_icon" width="32" height="32"/>
+    </resources>
+</document>
