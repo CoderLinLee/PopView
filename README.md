@@ -1,7 +1,7 @@
 # PopView
 ## 弹出自定义视图控件,使用简单,耦合度小(popView)
 
-### 第一个图的使用方法
+### 类似QQ和微信消息页面的右上角微型菜单弹窗
 ~~~
 PopView *popView = [PopView showPopViewDirect:PopViewDirection_Bottom onView:sender contentView:self.popContentView];
 popView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
@@ -12,7 +12,7 @@ popView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
 
 
 
-### 第二个图的使用方法(处理了键盘遮挡的问题)
+### 侧边栏(处理了键盘遮挡的问题)
 ~~~
 PopView *popView = [PopView showSidePopDirect:PopViewDirection_SlideFromUp contentView:self.qzoneView];
 popView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
@@ -22,33 +22,32 @@ popView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
 
 
 
-#### 自定义显示和隐藏动画
+### 自定义显示和隐藏动画
 ~~~
-CGFloat SWidth = self.view.bounds.size.width;
-CGFloat SHeight = self.view.bounds.size.height;
-CGFloat height = 250;
-CGPoint locationPoint = CGPointMake(SWidth/2, SHeight/2+100);
-//定义出场动画
-CABasicAnimation *showAnima = [CABasicAnimation animationWithKeyPath:@"position"];
+CABasicAnimation *showAnima = [CABasicAnimation animationWithKeyPath:@"transform"];
 showAnima.duration = 0.25;
 showAnima.fillMode = kCAFillModeForwards;
-showAnima.fromValue = [NSValue valueWithCGPoint:CGPointMake(SWidth/2, -height/2)];
-showAnima.toValue = [NSValue valueWithCGPoint:locationPoint];
 showAnima.removedOnCompletion = YES;
+CATransform3D tofrom = CATransform3DMakeScale(1, 1, 1);
+CATransform3D from = CATransform3DMakeScale(0, 0, 1);
+showAnima.fromValue = [NSValue valueWithCATransform3D:from];
+showAnima.toValue =  [NSValue valueWithCATransform3D:tofrom];
 
-//定义消失动画
-CABasicAnimation *hidenAnima = [CABasicAnimation animationWithKeyPath:@"position"];
+
+CABasicAnimation *hidenAnima = [CABasicAnimation animationWithKeyPath:@"transform"];
 hidenAnima.duration = 0.25;
 hidenAnima.fillMode = kCAFillModeForwards;
-hidenAnima.fromValue = [NSValue valueWithCGPoint:locationPoint];
-hidenAnima.toValue = [NSValue valueWithCGPoint:CGPointMake(SWidth/2, SHeight+height/2)];
+CATransform3D tofrom1 = CATransform3DMakeScale(1, 0, 1);
+CATransform3D from1 = CATransform3DMakeScale(1, 1, 1);
+hidenAnima.fromValue = [NSValue valueWithCATransform3D:from1];
+hidenAnima.toValue =  [NSValue valueWithCATransform3D:tofrom1];
 
-//显示弹出
-self.loginView.center = locationPoint;
+self.loginView.center = self.view.center;
 self.loginView.backgroundColor = [UIColor whiteColor];
-PopView *popView = [PopView showPopSideContentView:self.loginView showAnimation:showAnima hidenAnimation:hidenAnima];
+PopView *popView = [PopView showPopContentView:self.loginView showAnimation:showAnima hidenAnimation:hidenAnima];
 popView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
 popView.clickOutHidden = NO;
+
 ~~~
 
 
