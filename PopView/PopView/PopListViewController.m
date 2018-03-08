@@ -17,9 +17,11 @@
 
 @implementation PopListViewController
 
+#define popColor [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1.0]
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"可是设置任意View";
+    self.title = @"可设置任意View";
+    
 }
 
 - (void)closePopView{
@@ -34,7 +36,6 @@
 - (IBAction)rightClick:(id)sender {
     UIImageView *triangleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"elementSelect_icon"]];
     triangleView.bounds = CGRectMake(0, 0, triangleView.image.size.width*1.5, triangleView.image.size.height*1.5);
-    self.popListView.backgroundColor = [UIColor whiteColor];
     PopView *popView = [PopView popContentView:self.popListView direct:PopViewDirection_Right onView:sender offset:60 triangleView:triangleView animation:YES];
     popView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
     self.popListView = nil;
@@ -57,8 +58,8 @@
 
 - (PopTableListView *)popListView{
     if (_popListView == nil) {
-        _popListView = [[PopTableListView alloc] initWithFrame:CGRectMake(0, 0, 150, 200)];
-        _popListView.backgroundColor = [UIColor redColor];
+        _popListView = [[PopTableListView alloc] initWithTitles:@[@"扫一扫",@"加好友",@"收付款",@"删除"] imgNames:@[@"saoyisao_icon",@"addFriend_icon",@"payMoney_icon",@"delete_icon"]];
+        _popListView.backgroundColor = popColor;
         _popListView.layer.cornerRadius = 5;
     }
     return _popListView;

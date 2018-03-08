@@ -32,14 +32,6 @@
 }
 
 - (IBAction)customCenterAnimation:(id)sender {
-    self.loginView.center = self.view.center;
-    self.loginView.backgroundColor = [UIColor whiteColor];
-    PopView *popView = [PopView showSidePopDirect:PopViewDirection_SlideInCenter contentView:self.loginView];
-    popView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
-    popView.clickOutHidden = NO;
-}
-
-- (IBAction)customAnimation:(id)sender {
     CABasicAnimation *showAnima = [CABasicAnimation animationWithKeyPath:@"transform"];
     showAnima.duration = 0.25;
     showAnima.fillMode = kCAFillModeForwards;
@@ -61,6 +53,14 @@
     self.loginView.center = self.view.center;
     self.loginView.backgroundColor = [UIColor whiteColor];
     PopView *popView = [PopView showPopContentView:self.loginView showAnimation:showAnima hidenAnimation:hidenAnima];
+    popView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
+    popView.clickOutHidden = NO;
+}
+
+- (IBAction)customAnimation:(id)sender {
+    self.loginView.center = self.view.center;
+    self.loginView.backgroundColor = [UIColor whiteColor];
+    PopView *popView = [PopView showSidePopDirect:PopViewDirection_SlideInCenter contentView:self.loginView];
     popView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
     popView.clickOutHidden = NO;
 }

@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface PopTableListView : UIView
-
+- (instancetype)initWithTitles:(NSArray <NSString *>*)titles imgNames:(NSArray <NSString *>*)imgNames;
 @end
