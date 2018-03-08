@@ -22,6 +22,9 @@
 		F20A5FA62047AB7500E0B7F0 /* SideLeftBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F20A5FA52047AB7500E0B7F0 /* SideLeftBarView.xib */; };
 		F2A61EA9204FD9A50000ADA8 /* RegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A61EA8204FD9A50000ADA8 /* RegisterView.m */; };
 		F2A61EAB204FD9BE0000ADA8 /* RegisterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2A61EAA204FD9BE0000ADA8 /* RegisterView.xib */; };
+		F2A61EAE2050D2CF0000ADA8 /* PopListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A61EAD2050D2CF0000ADA8 /* PopListViewController.m */; };
+		F2A61EB12050D3A50000ADA8 /* PopSiderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A61EB02050D3A50000ADA8 /* PopSiderViewController.m */; };
+		F2A61EB42050E2300000ADA8 /* PopAnimationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A61EB32050E2300000ADA8 /* PopAnimationTool.m */; };
 		F2F05967204557E400F626A7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F2F05966204557E400F626A7 /* AppDelegate.m */; };
 		F2F0596A204557E400F626A7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2F05969204557E400F626A7 /* ViewController.m */; };
 		F2F0596D204557E400F626A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2F0596B204557E400F626A7 /* Main.storyboard */; };
@@ -75,6 +78,12 @@
 		F2A61EA7204FD9A50000ADA8 /* RegisterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterView.h; sourceTree = "<group>"; };
 		F2A61EA8204FD9A50000ADA8 /* RegisterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterView.m; sourceTree = "<group>"; };
 		F2A61EAA204FD9BE0000ADA8 /* RegisterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterView.xib; sourceTree = "<group>"; };
+		F2A61EAC2050D2CF0000ADA8 /* PopListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopListViewController.h; sourceTree = "<group>"; };
+		F2A61EAD2050D2CF0000ADA8 /* PopListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopListViewController.m; sourceTree = "<group>"; };
+		F2A61EAF2050D3A50000ADA8 /* PopSiderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopSiderViewController.h; sourceTree = "<group>"; };
+		F2A61EB02050D3A50000ADA8 /* PopSiderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopSiderViewController.m; sourceTree = "<group>"; };
+		F2A61EB22050E2300000ADA8 /* PopAnimationTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopAnimationTool.h; sourceTree = "<group>"; };
+		F2A61EB32050E2300000ADA8 /* PopAnimationTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopAnimationTool.m; sourceTree = "<group>"; };
 		F2F05962204557E400F626A7 /* PopView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2F05965204557E400F626A7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F2F05966204557E400F626A7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -179,6 +188,10 @@
 				F2F05966204557E400F626A7 /* AppDelegate.m */,
 				F2F05968204557E400F626A7 /* ViewController.h */,
 				F2F05969204557E400F626A7 /* ViewController.m */,
+				F2A61EAC2050D2CF0000ADA8 /* PopListViewController.h */,
+				F2A61EAD2050D2CF0000ADA8 /* PopListViewController.m */,
+				F2A61EAF2050D3A50000ADA8 /* PopSiderViewController.h */,
+				F2A61EB02050D3A50000ADA8 /* PopSiderViewController.m */,
 				184DD9BF2046F660002D2E9E /* CustomView */,
 				F2F0596B204557E400F626A7 /* Main.storyboard */,
 				F2F0596E204557E400F626A7 /* Assets.xcassets */,
@@ -212,6 +225,8 @@
 			children = (
 				F2F059992045583B00F626A7 /* PopView.h */,
 				F2F059982045583B00F626A7 /* PopView.m */,
+				F2A61EB22050E2300000ADA8 /* PopAnimationTool.h */,
+				F2A61EB32050E2300000ADA8 /* PopAnimationTool.m */,
 			);
 			path = PopView;
 			sourceTree = "<group>";
@@ -356,13 +371,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F20A5FA42047AB6800E0B7F0 /* SideLeftBarView.m in Sources */,
+				F2A61EB12050D3A50000ADA8 /* PopSiderViewController.m in Sources */,
 				184DD9C22046F661002D2E9E /* PopTableListView.m in Sources */,
+				F2A61EAE2050D2CF0000ADA8 /* PopListViewController.m in Sources */,
 				F2F0596A204557E400F626A7 /* ViewController.m in Sources */,
 				F20A5F9720479CA900E0B7F0 /* QZoneView.m in Sources */,
 				F20A5F9F2047A92000E0B7F0 /* CusttomDatePickView.m in Sources */,
 				184DD9CB2046F990002D2E9E /* LoginView.m in Sources */,
 				F2F05975204557E400F626A7 /* main.m in Sources */,
 				184DD9C52046F6B3002D2E9E /* SharePanelView.m in Sources */,
+				F2A61EB42050E2300000ADA8 /* PopAnimationTool.m in Sources */,
 				F2A61EA9204FD9A50000ADA8 /* RegisterView.m in Sources */,
 				F2F0599A2045583B00F626A7 /* PopView.m in Sources */,
 				184DD9C82046F856002D2E9E /* ConditionFilterView.m in Sources */,

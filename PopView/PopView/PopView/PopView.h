@@ -8,46 +8,46 @@
 
 #import <UIKit/UIKit.h>
 
+static  CGFloat   const animationDuration       = 0.25;
+static  CGFloat   const popViewInsert           = 5;
+
 typedef NS_OPTIONS(NSUInteger, PopViewDirection) {
-    PopViewDirection_Left               = 5,
-    PopViewDirection_Bottom             = 6,
-    PopViewDirection_Right              = 7,
-    PopViewDirection_Top                = 8,
-    PopViewDirection_None               = 9,
+    PopViewDirection_Left,
+    PopViewDirection_Bottom,
+    PopViewDirection_Right,
+    PopViewDirection_Top,
+    PopViewDirection_None,
+
+
     
-    
-    
-    PopViewDirection_SlideFromLeft                 = 10,
-    PopViewDirection_SlideFromRight                = 11,
-    PopViewDirection_SlideFromUp                   = 12,
-    PopViewDirection_SlideFromBottom               = 13,
+    PopViewDirection_SlideFromLeft                 = 20,
+    PopViewDirection_SlideFromRight                = 21,
+    PopViewDirection_SlideFromUp                   = 22,
+    PopViewDirection_SlideFromBottom               = 23,
+    PopViewDirection_SlideInCenter                 = 24,
+
+
 };
 
 @interface PopView : UIView
-@property (nonatomic ,assign) BOOL clickOutHidden;
-@property (nonatomic ,weak) UIView *responseOnView;
-@property (nonatomic ,assign) CGFloat keyBoardMargin;
+@property (nonatomic ,assign) BOOL clickOutHidden;    //default to yes
+@property (nonatomic ,weak) UIView *responseOnView;   //设置后事件会透过去,响应该view上的事件
+@property (nonatomic ,assign) CGFloat keyBoardMargin; //默认为10px
 @property (nonatomic ,strong) UIView *popContainerView;
 @property (nonatomic ,copy) void(^clickOutHidenComplete)(void);
 
-+(instancetype)showPopViewDirect:(PopViewDirection)direction
-                          onView:(UIView *)onView
-                     contentView:(UIView *)contentView;
 
++ (instancetype)popContentView:(UIView *)contentView
+                        direct:(PopViewDirection)direct
+                        onView:(UIView *)onView;
 
-+(instancetype)showPopViewDirect:(PopViewDirection)direction
-                          onView:(UIView *)onView
-                     contentView:(UIView *)contentView
-                          offSet:(CGFloat)offset
-                    triangleView:(UIView *)triangleView;
++ (instancetype)popContentView:(UIView *)contentView
+                        direct:(PopViewDirection)direct
+                        onView:(UIView *)onView
+                        offset:(CGFloat)offset
+                  triangleView:(UIView *)triangleView
+                     animation:(BOOL)animation;
 
-
-+ (instancetype)showPopViewDirect:(PopViewDirection)direct
-                           onView:(UIView *)onView
-                      contentView:(UIView *)contentView
-                           offSet:(CGFloat)offset
-                     triangleView:(UIView *)triangleView
-                        animation:(BOOL)animation;
 
 
 + (instancetype)showSidePopDirect:(PopViewDirection)direction
@@ -55,9 +55,9 @@ typedef NS_OPTIONS(NSUInteger, PopViewDirection) {
 
 
 
-+ (instancetype)showPopSideContentView:(UIView *)contentView
-                    showAnimation:(CABasicAnimation *)showAnimation
-                   hidenAnimation:(CABasicAnimation *)hidenAnimation;
++ (instancetype)showPopContentView:(UIView *)contentView
+                     showAnimation:(CABasicAnimation *)showAnimation
+                    hidenAnimation:(CABasicAnimation *)hidenAnimation;
 
 
 + (void)hidenPopView;
