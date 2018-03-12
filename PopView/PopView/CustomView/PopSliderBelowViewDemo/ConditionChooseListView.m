@@ -32,9 +32,6 @@
     UILabel *titleLabel = [cell.contentView viewWithTag:999];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
-        UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 43.5, self.bounds.size.width, segmentingLineHeight)];
-        lineView.backgroundColor = segmentingLineColor;
-        [cell.contentView addSubview:lineView];
         
         titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, 43)];
         [cell.contentView addSubview:titleLabel];
@@ -51,6 +48,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (self.chooseComplete) {
+        self.chooseComplete([self.titles objectAtIndex:indexPath.row]);
+    }
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    [cell setSeparatorInset:UIEdgeInsetsZero];
+    [cell setLayoutMargins:UIEdgeInsetsZero];
 }
 
 - (UITableView *)tableView{
@@ -59,7 +64,8 @@
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.backgroundColor = [UIColor clearColor];
-        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tableView.rowHeight = 44;
+        _tableView.scrollEnabled = NO;
     }
     return _tableView;
 }

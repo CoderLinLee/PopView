@@ -8,6 +8,7 @@
 
 #import "RegionChooseView.h"
 #import "PopSliderBelowStaticVar.h"
+#import "PopView.h"
 
 @interface RegionChooseView()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic ,strong) UITableView *leftTableView;
@@ -41,23 +42,26 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
         cell.backgroundColor = [UIColor clearColor];
-        UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(10, 43.7, self.bounds.size.width, segmentingLineHeight)];
-        lineView.backgroundColor = segmentingLineColor;
-        [cell.contentView addSubview:lineView];
         
         titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, self.bounds.size.width, 43)];
         [cell.contentView addSubview:titleLabel];
         titleLabel.tag = 999;
-        
     }
     
     if (tableView == self.leftTableView) {
         titleLabel.text = [self.leftArr objectAtIndex:indexPath.row];
-        titleLabel.textColor = self.selectLeftIndex == indexPath.row ? [UIColor redColor] : [UIColor blackColor];
+        if (self.selectLeftIndex == indexPath.row) {
+            titleLabel.textColor =  [UIColor redColor] ;
+            cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow_seletedIcon"]];
+        }else{
+            titleLabel.textColor =  [UIColor blackColor];
+            cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow_icon"]];
+        }
     }else{
         NSArray *sectionDetailArr = [self.rightArr objectAtIndex:self.selectLeftIndex];
         titleLabel.text = [sectionDetailArr objectAtIndex:indexPath.row];
         titleLabel.textColor = self.selectRightIndex == indexPath.row ? [UIColor redColor] : [UIColor blackColor];
+        cell.accessoryView = nil;
     }
     return cell;
 }
@@ -86,13 +90,16 @@
     
 }
 
+- (void)sureClick{
+    [PopView hidenPopView];
+}
+
 - (UITableView *)rightTableView{
     if (_rightTableView == nil) {
         _rightTableView = [[UITableView alloc] initWithFrame:self.bounds style:UITableViewStylePlain];
         _rightTableView.frame = CGRectMake(self.bounds.size.width/2, 0, self.bounds.size.width/2, self.bounds.size.height  - self.toolView.bounds.size.height);
         _rightTableView.delegate = self;
         _rightTableView.dataSource = self;
-        _rightTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _rightTableView.backgroundColor = [UIColor colorWithRed:242.0/255 green:242.0/255 blue:242.0/255 alpha:1];
 
     }
@@ -107,8 +114,7 @@
         _leftTableView.dataSource = self;
         _leftTableView.backgroundColor = [UIColor clearColor];
         _leftTableView.showsVerticalScrollIndicator = NO;
-        _leftTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-
+        _leftTableView.tableFooterView = [UIView new];
     }
     return _leftTableView;
 }
@@ -151,7 +157,7 @@
 
         UIButton *sureBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [sureBtn setTitle:@"确定" forState:UIControlStateNormal];
-        [sureBtn addTarget:self action:@selector(resetClick) forControlEvents:UIControlEventTouchUpInside];
+        [sureBtn addTarget:self action:@selector(sureClick) forControlEvents:UIControlEventTouchUpInside];
         sureBtn.frame = CGRectMake(self.bounds.size.width/2 + margin, margin, self.bounds.size.width/2 - 2*margin, _toolView.bounds.size.height - 2*margin);
         sureBtn.backgroundColor = [UIColor colorWithRed:99/255.0 green:213/255.0 blue:99/255.0 alpha:1];;
         [_toolView addSubview:sureBtn];

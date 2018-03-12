@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ConditionChooseListView : UIView
-
+@property (nonatomic ,copy) void (^chooseComplete)(NSString *title);
 @end

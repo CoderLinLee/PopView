@@ -7,6 +7,8 @@
 //
 
 #import "PriceChooseToolView.h"
+#import "PopView.h"
+
 @interface PriceChooseToolView()
 @property (weak, nonatomic) IBOutlet UIButton *sureBtn;
 
@@ -17,5 +19,7 @@
     [super awakeFromNib];
     self.sureBtn.layer.cornerRadius = 2;
 }
-
+- (IBAction)sureClick{
+    [PopView hidenPopView];
+}
 @end

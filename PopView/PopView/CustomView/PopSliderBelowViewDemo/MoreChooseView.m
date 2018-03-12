@@ -8,6 +8,7 @@
 
 #import "MoreChooseView.h"
 #import "PopSliderBelowStaticVar.h"
+#import "PopView.h"
 
 @implementation MoreChooseItemModel
 @end
@@ -101,7 +102,7 @@
     }else{
         UIView *lineView = [view viewWithTag:12];
         if (lineView == nil) {
-            lineView = [[UIView alloc]initWithFrame:CGRectMake(15, 0, self.bounds.size.width - 30, segmentingLineHeight)];
+            lineView = [[UIView alloc]initWithFrame:CGRectMake(15, 0, self.bounds.size.width - 30, 0.5)];
             lineView.tag = 12;
             [view addSubview:lineView];
         }
@@ -155,6 +156,10 @@
     [self.collectionView reloadData];
 }
 
+- (void)sureClick{
+    [PopView hidenPopView];
+}
+
 - (UIView *)toolView{
     if (_toolView == nil) {
         _toolView = [[UIView alloc] initWithFrame:CGRectMake(0, self.bounds.size.height - 60, self.bounds.size.width, 60)];
@@ -170,7 +175,7 @@
         
         UIButton *sureBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [sureBtn setTitle:@"确定" forState:UIControlStateNormal];
-        [sureBtn addTarget:self action:@selector(resetClick) forControlEvents:UIControlEventTouchUpInside];
+        [sureBtn addTarget:self action:@selector(sureClick) forControlEvents:UIControlEventTouchUpInside];
         sureBtn.frame = CGRectMake(self.bounds.size.width/2 + margin, margin, self.bounds.size.width/2 - 2*margin, _toolView.bounds.size.height - 2*margin);
         sureBtn.backgroundColor = [UIColor colorWithRed:99/255.0 green:213/255.0 blue:99/255.0 alpha:1];;
         [_toolView addSubview:sureBtn];

@@ -9,6 +9,8 @@
 #import "PriceChooseView.h"
 #import "PriceChooseToolView.h"
 #import "PopSliderBelowStaticVar.h"
+#import "PopView.h"
+
 
 @interface PriceChooseView()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic ,strong) UITableView *tableView;
@@ -39,9 +41,6 @@
     UILabel *titleLabel = [cell.contentView viewWithTag:999];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
-        UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 44-segmentingLineHeight, self.bounds.size.width, segmentingLineHeight)];
-        lineView.backgroundColor = segmentingLineColor;
-        [cell.contentView addSubview:lineView];
          
         titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, self.bounds.size.width, 43)];
         [cell.contentView addSubview:titleLabel];
@@ -64,16 +63,14 @@
     [self.tableView reloadData];
 }
 
-- (void)sureClick{
-    
-}
+
+
 - (UITableView *)tableView{
     if (_tableView == nil) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height - self.toolView.bounds.size.height) style:UITableViewStylePlain];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.rowHeight = 44;
-        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     return _tableView;
 }

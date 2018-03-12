@@ -31,6 +31,9 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <state key="normal" title="确定"/>
+                    <connections>
+                        <action selector="sureClick" destination="iN0-l3-epB" eventType="touchUpInside" id="FkK-6a-tBF"/>
+                    </connections>
                 </button>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="最低价" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vAr-lZ-79C">
                     <rect key="frame" x="66" y="7.5" width="80" height="30"/>

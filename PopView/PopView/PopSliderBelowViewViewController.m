@@ -32,6 +32,11 @@
     self.view.backgroundColor = [UIColor colorWithRed:242.0/255 green:242.0/255 blue:242.0/255 alpha:1];
     self.tableView.contentInsetAdjustmentBehavior = NO;
     self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
+    
+    __weak typeof(self) weakSelf = self;
+    [self.chooseListView setChooseComplete:^(NSString *title) {
+        [weakSelf.ylTitleBtn setTitle:title forState:UIControlStateNormal];
+    }];
 }
 
 -(void)viewWillAppear:(BOOL)animated{

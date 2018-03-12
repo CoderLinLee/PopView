@@ -9,6 +9,7 @@
 #import "HouseChooseView.h"
 #import "MoreChooseView.h"
 #import "PopSliderBelowStaticVar.h"
+#import "PopView.h"
 
 @interface HouseChooseView()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic ,strong) UITableView *tableView;
@@ -36,11 +37,8 @@
     UILabel *titleLabel = [cell.contentView viewWithTag:999];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
-        UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 43.5, self.bounds.size.width, segmentingLineHeight)];
-        lineView.backgroundColor = segmentingLineColor;
-        [cell.contentView addSubview:lineView];
         
-        titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, self.bounds.size.width, 43)];
+        titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 0, self.bounds.size.width, tableView.rowHeight - segmentingLineHeight)];
         [cell.contentView addSubview:titleLabel];
         titleLabel.tag = 999;
     }
@@ -80,7 +78,7 @@
 }
 
 - (void)sureClick{
-    
+    [PopView hidenPopView];
 }
 
 - (UITableView *)tableView{
@@ -89,7 +87,7 @@
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.backgroundColor = [UIColor clearColor];
-        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tableView.rowHeight = 44;
     }
     return _tableView;
 }
