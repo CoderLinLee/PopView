@@ -8,23 +8,35 @@
 
 /* Begin PBXBuildFile section */
 		184DD9C22046F661002D2E9E /* PopTableListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 184DD9C12046F660002D2E9E /* PopTableListView.m */; };
-		184DD9C52046F6B3002D2E9E /* SharePanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 184DD9C42046F6B3002D2E9E /* SharePanelView.m */; };
-		184DD9C82046F856002D2E9E /* ConditionFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 184DD9C72046F856002D2E9E /* ConditionFilterView.m */; };
-		184DD9CB2046F990002D2E9E /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 184DD9CA2046F990002D2E9E /* LoginView.m */; };
-		184DD9CD2046F9A3002D2E9E /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184DD9CC2046F9A3002D2E9E /* LoginView.xib */; };
-		184DD9CF20470304002D2E9E /* SharePanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184DD9CE20470304002D2E9E /* SharePanelView.xib */; };
-		F20A5F9720479CA900E0B7F0 /* QZoneView.m in Sources */ = {isa = PBXBuildFile; fileRef = F20A5F9620479CA900E0B7F0 /* QZoneView.m */; };
-		F20A5F9920479CB800E0B7F0 /* QZoneView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F20A5F9820479CB800E0B7F0 /* QZoneView.xib */; };
+		1867684F2052D6A700C8815C /* moreFilter.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1867684E2052D6A700C8815C /* moreFilter.plist */; };
+		18A613D520542C8F00BF516E /* PopSliderBelowStaticVar.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A613D420542C8F00BF516E /* PopSliderBelowStaticVar.m */; };
+		18BEDC242055973200ABB9F8 /* ConditionFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BEDC112055973200ABB9F8 /* ConditionFilterView.m */; };
+		18BEDC252055973200ABB9F8 /* CusttomDatePickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BEDC132055973200ABB9F8 /* CusttomDatePickView.m */; };
+		18BEDC262055973200ABB9F8 /* CusttomDatePickView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BEDC142055973200ABB9F8 /* CusttomDatePickView.xib */; };
+		18BEDC272055973200ABB9F8 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BEDC162055973200ABB9F8 /* LoginView.m */; };
+		18BEDC282055973200ABB9F8 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BEDC172055973200ABB9F8 /* LoginView.xib */; };
+		18BEDC292055973200ABB9F8 /* QZoneView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BEDC192055973200ABB9F8 /* QZoneView.m */; };
+		18BEDC2A2055973200ABB9F8 /* QZoneView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BEDC1A2055973200ABB9F8 /* QZoneView.xib */; };
+		18BEDC2B2055973200ABB9F8 /* RegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BEDC1C2055973200ABB9F8 /* RegisterView.m */; };
+		18BEDC2C2055973200ABB9F8 /* RegisterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BEDC1D2055973200ABB9F8 /* RegisterView.xib */; };
+		18BEDC2D2055973200ABB9F8 /* SharePanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BEDC1F2055973200ABB9F8 /* SharePanelView.m */; };
+		18BEDC2E2055973200ABB9F8 /* SharePanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BEDC202055973200ABB9F8 /* SharePanelView.xib */; };
+		18BEDC2F2055973200ABB9F8 /* SideLeftBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BEDC222055973200ABB9F8 /* SideLeftBarView.m */; };
+		18BEDC302055973200ABB9F8 /* SideLeftBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BEDC232055973200ABB9F8 /* SideLeftBarView.xib */; };
 		F20A5F9C2047A43F00E0B7F0 /* YLButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F20A5F9B2047A43F00E0B7F0 /* YLButton.m */; };
-		F20A5F9F2047A92000E0B7F0 /* CusttomDatePickView.m in Sources */ = {isa = PBXBuildFile; fileRef = F20A5F9E2047A92000E0B7F0 /* CusttomDatePickView.m */; };
-		F20A5FA12047A92A00E0B7F0 /* CusttomDatePickView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F20A5FA02047A92A00E0B7F0 /* CusttomDatePickView.xib */; };
-		F20A5FA42047AB6800E0B7F0 /* SideLeftBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = F20A5FA32047AB6800E0B7F0 /* SideLeftBarView.m */; };
-		F20A5FA62047AB7500E0B7F0 /* SideLeftBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F20A5FA52047AB7500E0B7F0 /* SideLeftBarView.xib */; };
-		F2A61EA9204FD9A50000ADA8 /* RegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A61EA8204FD9A50000ADA8 /* RegisterView.m */; };
-		F2A61EAB204FD9BE0000ADA8 /* RegisterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2A61EAA204FD9BE0000ADA8 /* RegisterView.xib */; };
 		F2A61EAE2050D2CF0000ADA8 /* PopListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A61EAD2050D2CF0000ADA8 /* PopListViewController.m */; };
 		F2A61EB12050D3A50000ADA8 /* PopSiderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A61EB02050D3A50000ADA8 /* PopSiderViewController.m */; };
 		F2A61EB42050E2300000ADA8 /* PopAnimationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A61EB32050E2300000ADA8 /* PopAnimationTool.m */; };
+		F2A61EBA205229E80000ADA8 /* PopSliderBelowViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A61EB9205229E80000ADA8 /* PopSliderBelowViewViewController.m */; };
+		F2A61EC420525F390000ADA8 /* HouseConditionFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A61EC120525F390000ADA8 /* HouseConditionFilterView.m */; };
+		F2A61EC520525F390000ADA8 /* HouseConditionFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2A61EC320525F390000ADA8 /* HouseConditionFilterView.xib */; };
+		F2A61EC820525FA80000ADA8 /* ConditionChooseListView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A61EC720525FA80000ADA8 /* ConditionChooseListView.m */; };
+		F2A61ECB20526A3F0000ADA8 /* RegionChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A61ECA20526A3F0000ADA8 /* RegionChooseView.m */; };
+		F2A61ECE20527B7D0000ADA8 /* PriceChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A61ECD20527B7D0000ADA8 /* PriceChooseView.m */; };
+		F2A61ED120527B910000ADA8 /* HouseChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A61ED020527B910000ADA8 /* HouseChooseView.m */; };
+		F2A61ED420527B9E0000ADA8 /* MoreChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A61ED320527B9E0000ADA8 /* MoreChooseView.m */; };
+		F2A61ED7205281D50000ADA8 /* PriceChooseToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A61ED6205281D50000ADA8 /* PriceChooseToolView.m */; };
+		F2A61ED9205281DF0000ADA8 /* PriceChooseToolView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2A61ED8205281DF0000ADA8 /* PriceChooseToolView.xib */; };
 		F2F05967204557E400F626A7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F2F05966204557E400F626A7 /* AppDelegate.m */; };
 		F2F0596A204557E400F626A7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2F05969204557E400F626A7 /* ViewController.m */; };
 		F2F0596D204557E400F626A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2F0596B204557E400F626A7 /* Main.storyboard */; };
@@ -56,34 +68,55 @@
 /* Begin PBXFileReference section */
 		184DD9C02046F660002D2E9E /* PopTableListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopTableListView.h; sourceTree = "<group>"; };
 		184DD9C12046F660002D2E9E /* PopTableListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopTableListView.m; sourceTree = "<group>"; };
-		184DD9C32046F6B3002D2E9E /* SharePanelView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SharePanelView.h; sourceTree = "<group>"; };
-		184DD9C42046F6B3002D2E9E /* SharePanelView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SharePanelView.m; sourceTree = "<group>"; };
-		184DD9C62046F856002D2E9E /* ConditionFilterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConditionFilterView.h; sourceTree = "<group>"; };
-		184DD9C72046F856002D2E9E /* ConditionFilterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConditionFilterView.m; sourceTree = "<group>"; };
-		184DD9C92046F990002D2E9E /* LoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
-		184DD9CA2046F990002D2E9E /* LoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
-		184DD9CC2046F9A3002D2E9E /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
-		184DD9CE20470304002D2E9E /* SharePanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SharePanelView.xib; sourceTree = "<group>"; };
-		F20A5F9520479CA900E0B7F0 /* QZoneView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QZoneView.h; sourceTree = "<group>"; };
-		F20A5F9620479CA900E0B7F0 /* QZoneView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QZoneView.m; sourceTree = "<group>"; };
-		F20A5F9820479CB800E0B7F0 /* QZoneView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QZoneView.xib; sourceTree = "<group>"; };
+		1867684E2052D6A700C8815C /* moreFilter.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = moreFilter.plist; sourceTree = "<group>"; };
+		18A613D320542C8F00BF516E /* PopSliderBelowStaticVar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopSliderBelowStaticVar.h; sourceTree = "<group>"; };
+		18A613D420542C8F00BF516E /* PopSliderBelowStaticVar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopSliderBelowStaticVar.m; sourceTree = "<group>"; };
+		18BEDC102055973200ABB9F8 /* ConditionFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConditionFilterView.h; sourceTree = "<group>"; };
+		18BEDC112055973200ABB9F8 /* ConditionFilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConditionFilterView.m; sourceTree = "<group>"; };
+		18BEDC122055973200ABB9F8 /* CusttomDatePickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CusttomDatePickView.h; sourceTree = "<group>"; };
+		18BEDC132055973200ABB9F8 /* CusttomDatePickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CusttomDatePickView.m; sourceTree = "<group>"; };
+		18BEDC142055973200ABB9F8 /* CusttomDatePickView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CusttomDatePickView.xib; sourceTree = "<group>"; };
+		18BEDC152055973200ABB9F8 /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
+		18BEDC162055973200ABB9F8 /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
+		18BEDC172055973200ABB9F8 /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
+		18BEDC182055973200ABB9F8 /* QZoneView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QZoneView.h; sourceTree = "<group>"; };
+		18BEDC192055973200ABB9F8 /* QZoneView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QZoneView.m; sourceTree = "<group>"; };
+		18BEDC1A2055973200ABB9F8 /* QZoneView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QZoneView.xib; sourceTree = "<group>"; };
+		18BEDC1B2055973200ABB9F8 /* RegisterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterView.h; sourceTree = "<group>"; };
+		18BEDC1C2055973200ABB9F8 /* RegisterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterView.m; sourceTree = "<group>"; };
+		18BEDC1D2055973200ABB9F8 /* RegisterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterView.xib; sourceTree = "<group>"; };
+		18BEDC1E2055973200ABB9F8 /* SharePanelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharePanelView.h; sourceTree = "<group>"; };
+		18BEDC1F2055973200ABB9F8 /* SharePanelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharePanelView.m; sourceTree = "<group>"; };
+		18BEDC202055973200ABB9F8 /* SharePanelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SharePanelView.xib; sourceTree = "<group>"; };
+		18BEDC212055973200ABB9F8 /* SideLeftBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideLeftBarView.h; sourceTree = "<group>"; };
+		18BEDC222055973200ABB9F8 /* SideLeftBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideLeftBarView.m; sourceTree = "<group>"; };
+		18BEDC232055973200ABB9F8 /* SideLeftBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideLeftBarView.xib; sourceTree = "<group>"; };
 		F20A5F9A2047A43F00E0B7F0 /* YLButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLButton.h; sourceTree = "<group>"; };
 		F20A5F9B2047A43F00E0B7F0 /* YLButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLButton.m; sourceTree = "<group>"; };
-		F20A5F9D2047A92000E0B7F0 /* CusttomDatePickView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CusttomDatePickView.h; sourceTree = "<group>"; };
-		F20A5F9E2047A92000E0B7F0 /* CusttomDatePickView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CusttomDatePickView.m; sourceTree = "<group>"; };
-		F20A5FA02047A92A00E0B7F0 /* CusttomDatePickView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CusttomDatePickView.xib; sourceTree = "<group>"; };
-		F20A5FA22047AB6800E0B7F0 /* SideLeftBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SideLeftBarView.h; sourceTree = "<group>"; };
-		F20A5FA32047AB6800E0B7F0 /* SideLeftBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SideLeftBarView.m; sourceTree = "<group>"; };
-		F20A5FA52047AB7500E0B7F0 /* SideLeftBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideLeftBarView.xib; sourceTree = "<group>"; };
-		F2A61EA7204FD9A50000ADA8 /* RegisterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterView.h; sourceTree = "<group>"; };
-		F2A61EA8204FD9A50000ADA8 /* RegisterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterView.m; sourceTree = "<group>"; };
-		F2A61EAA204FD9BE0000ADA8 /* RegisterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterView.xib; sourceTree = "<group>"; };
 		F2A61EAC2050D2CF0000ADA8 /* PopListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopListViewController.h; sourceTree = "<group>"; };
 		F2A61EAD2050D2CF0000ADA8 /* PopListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopListViewController.m; sourceTree = "<group>"; };
 		F2A61EAF2050D3A50000ADA8 /* PopSiderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopSiderViewController.h; sourceTree = "<group>"; };
 		F2A61EB02050D3A50000ADA8 /* PopSiderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopSiderViewController.m; sourceTree = "<group>"; };
 		F2A61EB22050E2300000ADA8 /* PopAnimationTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopAnimationTool.h; sourceTree = "<group>"; };
 		F2A61EB32050E2300000ADA8 /* PopAnimationTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopAnimationTool.m; sourceTree = "<group>"; };
+		F2A61EB8205229E80000ADA8 /* PopSliderBelowViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopSliderBelowViewViewController.h; sourceTree = "<group>"; };
+		F2A61EB9205229E80000ADA8 /* PopSliderBelowViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopSliderBelowViewViewController.m; sourceTree = "<group>"; };
+		F2A61EC120525F390000ADA8 /* HouseConditionFilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HouseConditionFilterView.m; sourceTree = "<group>"; };
+		F2A61EC220525F390000ADA8 /* HouseConditionFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouseConditionFilterView.h; sourceTree = "<group>"; };
+		F2A61EC320525F390000ADA8 /* HouseConditionFilterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HouseConditionFilterView.xib; sourceTree = "<group>"; };
+		F2A61EC620525FA80000ADA8 /* ConditionChooseListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConditionChooseListView.h; sourceTree = "<group>"; };
+		F2A61EC720525FA80000ADA8 /* ConditionChooseListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConditionChooseListView.m; sourceTree = "<group>"; };
+		F2A61EC920526A3F0000ADA8 /* RegionChooseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegionChooseView.h; sourceTree = "<group>"; };
+		F2A61ECA20526A3F0000ADA8 /* RegionChooseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegionChooseView.m; sourceTree = "<group>"; };
+		F2A61ECC20527B7D0000ADA8 /* PriceChooseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PriceChooseView.h; sourceTree = "<group>"; };
+		F2A61ECD20527B7D0000ADA8 /* PriceChooseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PriceChooseView.m; sourceTree = "<group>"; };
+		F2A61ECF20527B910000ADA8 /* HouseChooseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HouseChooseView.h; sourceTree = "<group>"; };
+		F2A61ED020527B910000ADA8 /* HouseChooseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HouseChooseView.m; sourceTree = "<group>"; };
+		F2A61ED220527B9E0000ADA8 /* MoreChooseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoreChooseView.h; sourceTree = "<group>"; };
+		F2A61ED320527B9E0000ADA8 /* MoreChooseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoreChooseView.m; sourceTree = "<group>"; };
+		F2A61ED5205281D50000ADA8 /* PriceChooseToolView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PriceChooseToolView.h; sourceTree = "<group>"; };
+		F2A61ED6205281D50000ADA8 /* PriceChooseToolView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PriceChooseToolView.m; sourceTree = "<group>"; };
+		F2A61ED8205281DF0000ADA8 /* PriceChooseToolView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PriceChooseToolView.xib; sourceTree = "<group>"; };
 		F2F05962204557E400F626A7 /* PopView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2F05965204557E400F626A7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F2F05966204557E400F626A7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -134,30 +167,64 @@
 			children = (
 				184DD9C02046F660002D2E9E /* PopTableListView.h */,
 				184DD9C12046F660002D2E9E /* PopTableListView.m */,
-				184DD9C32046F6B3002D2E9E /* SharePanelView.h */,
-				184DD9C42046F6B3002D2E9E /* SharePanelView.m */,
-				184DD9CE20470304002D2E9E /* SharePanelView.xib */,
-				184DD9C62046F856002D2E9E /* ConditionFilterView.h */,
-				184DD9C72046F856002D2E9E /* ConditionFilterView.m */,
-				F20A5F9D2047A92000E0B7F0 /* CusttomDatePickView.h */,
-				F20A5F9E2047A92000E0B7F0 /* CusttomDatePickView.m */,
-				F20A5FA02047A92A00E0B7F0 /* CusttomDatePickView.xib */,
-				184DD9C92046F990002D2E9E /* LoginView.h */,
-				184DD9CA2046F990002D2E9E /* LoginView.m */,
-				184DD9CC2046F9A3002D2E9E /* LoginView.xib */,
-				F2A61EA7204FD9A50000ADA8 /* RegisterView.h */,
-				F2A61EA8204FD9A50000ADA8 /* RegisterView.m */,
-				F2A61EAA204FD9BE0000ADA8 /* RegisterView.xib */,
-				F20A5F9520479CA900E0B7F0 /* QZoneView.h */,
-				F20A5F9620479CA900E0B7F0 /* QZoneView.m */,
-				F20A5F9820479CB800E0B7F0 /* QZoneView.xib */,
-				F20A5FA22047AB6800E0B7F0 /* SideLeftBarView.h */,
-				F20A5FA32047AB6800E0B7F0 /* SideLeftBarView.m */,
-				F20A5FA52047AB7500E0B7F0 /* SideLeftBarView.xib */,
 				F20A5F9A2047A43F00E0B7F0 /* YLButton.h */,
 				F20A5F9B2047A43F00E0B7F0 /* YLButton.m */,
+				18BEDC0F2055973200ABB9F8 /* PopSliderViewDemo */,
+				F2A61EC020525F390000ADA8 /* PopSliderBelowViewDemo */,
 			);
 			path = CustomView;
+			sourceTree = "<group>";
+		};
+		18BEDC0F2055973200ABB9F8 /* PopSliderViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				18BEDC102055973200ABB9F8 /* ConditionFilterView.h */,
+				18BEDC112055973200ABB9F8 /* ConditionFilterView.m */,
+				18BEDC122055973200ABB9F8 /* CusttomDatePickView.h */,
+				18BEDC132055973200ABB9F8 /* CusttomDatePickView.m */,
+				18BEDC142055973200ABB9F8 /* CusttomDatePickView.xib */,
+				18BEDC152055973200ABB9F8 /* LoginView.h */,
+				18BEDC162055973200ABB9F8 /* LoginView.m */,
+				18BEDC172055973200ABB9F8 /* LoginView.xib */,
+				18BEDC182055973200ABB9F8 /* QZoneView.h */,
+				18BEDC192055973200ABB9F8 /* QZoneView.m */,
+				18BEDC1A2055973200ABB9F8 /* QZoneView.xib */,
+				18BEDC1B2055973200ABB9F8 /* RegisterView.h */,
+				18BEDC1C2055973200ABB9F8 /* RegisterView.m */,
+				18BEDC1D2055973200ABB9F8 /* RegisterView.xib */,
+				18BEDC1E2055973200ABB9F8 /* SharePanelView.h */,
+				18BEDC1F2055973200ABB9F8 /* SharePanelView.m */,
+				18BEDC202055973200ABB9F8 /* SharePanelView.xib */,
+				18BEDC212055973200ABB9F8 /* SideLeftBarView.h */,
+				18BEDC222055973200ABB9F8 /* SideLeftBarView.m */,
+				18BEDC232055973200ABB9F8 /* SideLeftBarView.xib */,
+			);
+			path = PopSliderViewDemo;
+			sourceTree = "<group>";
+		};
+		F2A61EC020525F390000ADA8 /* PopSliderBelowViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				F2A61EC220525F390000ADA8 /* HouseConditionFilterView.h */,
+				F2A61EC120525F390000ADA8 /* HouseConditionFilterView.m */,
+				F2A61EC320525F390000ADA8 /* HouseConditionFilterView.xib */,
+				F2A61EC920526A3F0000ADA8 /* RegionChooseView.h */,
+				F2A61ECA20526A3F0000ADA8 /* RegionChooseView.m */,
+				F2A61ECC20527B7D0000ADA8 /* PriceChooseView.h */,
+				F2A61ECD20527B7D0000ADA8 /* PriceChooseView.m */,
+				F2A61ED5205281D50000ADA8 /* PriceChooseToolView.h */,
+				F2A61ED6205281D50000ADA8 /* PriceChooseToolView.m */,
+				F2A61ED8205281DF0000ADA8 /* PriceChooseToolView.xib */,
+				F2A61ECF20527B910000ADA8 /* HouseChooseView.h */,
+				F2A61ED020527B910000ADA8 /* HouseChooseView.m */,
+				F2A61ED220527B9E0000ADA8 /* MoreChooseView.h */,
+				F2A61ED320527B9E0000ADA8 /* MoreChooseView.m */,
+				F2A61EC620525FA80000ADA8 /* ConditionChooseListView.h */,
+				F2A61EC720525FA80000ADA8 /* ConditionChooseListView.m */,
+				18A613D320542C8F00BF516E /* PopSliderBelowStaticVar.h */,
+				18A613D420542C8F00BF516E /* PopSliderBelowStaticVar.m */,
+			);
+			path = PopSliderBelowViewDemo;
 			sourceTree = "<group>";
 		};
 		F2F05959204557E400F626A7 = {
@@ -192,11 +259,14 @@
 				F2A61EAD2050D2CF0000ADA8 /* PopListViewController.m */,
 				F2A61EAF2050D3A50000ADA8 /* PopSiderViewController.h */,
 				F2A61EB02050D3A50000ADA8 /* PopSiderViewController.m */,
+				F2A61EB8205229E80000ADA8 /* PopSliderBelowViewViewController.h */,
+				F2A61EB9205229E80000ADA8 /* PopSliderBelowViewViewController.m */,
 				184DD9BF2046F660002D2E9E /* CustomView */,
 				F2F0596B204557E400F626A7 /* Main.storyboard */,
 				F2F0596E204557E400F626A7 /* Assets.xcassets */,
 				F2F05970204557E400F626A7 /* LaunchScreen.storyboard */,
 				F2F05973204557E400F626A7 /* Info.plist */,
+				1867684E2052D6A700C8815C /* moreFilter.plist */,
 				F2F05974204557E400F626A7 /* main.m */,
 			);
 			path = PopView;
@@ -337,15 +407,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F20A5F9920479CB800E0B7F0 /* QZoneView.xib in Resources */,
-				184DD9CF20470304002D2E9E /* SharePanelView.xib in Resources */,
-				F20A5FA12047A92A00E0B7F0 /* CusttomDatePickView.xib in Resources */,
+				18BEDC302055973200ABB9F8 /* SideLeftBarView.xib in Resources */,
 				F2F05972204557E400F626A7 /* LaunchScreen.storyboard in Resources */,
-				F2A61EAB204FD9BE0000ADA8 /* RegisterView.xib in Resources */,
-				F20A5FA62047AB7500E0B7F0 /* SideLeftBarView.xib in Resources */,
+				18BEDC2C2055973200ABB9F8 /* RegisterView.xib in Resources */,
+				18BEDC2E2055973200ABB9F8 /* SharePanelView.xib in Resources */,
+				F2A61EC520525F390000ADA8 /* HouseConditionFilterView.xib in Resources */,
+				18BEDC282055973200ABB9F8 /* LoginView.xib in Resources */,
+				18BEDC2A2055973200ABB9F8 /* QZoneView.xib in Resources */,
+				18BEDC262055973200ABB9F8 /* CusttomDatePickView.xib in Resources */,
 				F2F0596F204557E400F626A7 /* Assets.xcassets in Resources */,
-				184DD9CD2046F9A3002D2E9E /* LoginView.xib in Resources */,
 				F2F0596D204557E400F626A7 /* Main.storyboard in Resources */,
+				F2A61ED9205281DF0000ADA8 /* PriceChooseToolView.xib in Resources */,
+				1867684F2052D6A700C8815C /* moreFilter.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,20 +443,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F20A5FA42047AB6800E0B7F0 /* SideLeftBarView.m in Sources */,
+				18BEDC2B2055973200ABB9F8 /* RegisterView.m in Sources */,
+				F2A61ED120527B910000ADA8 /* HouseChooseView.m in Sources */,
+				F2A61EC820525FA80000ADA8 /* ConditionChooseListView.m in Sources */,
 				F2A61EB12050D3A50000ADA8 /* PopSiderViewController.m in Sources */,
 				184DD9C22046F661002D2E9E /* PopTableListView.m in Sources */,
+				F2A61ED7205281D50000ADA8 /* PriceChooseToolView.m in Sources */,
+				F2A61EBA205229E80000ADA8 /* PopSliderBelowViewViewController.m in Sources */,
+				F2A61ECB20526A3F0000ADA8 /* RegionChooseView.m in Sources */,
 				F2A61EAE2050D2CF0000ADA8 /* PopListViewController.m in Sources */,
+				18BEDC2D2055973200ABB9F8 /* SharePanelView.m in Sources */,
 				F2F0596A204557E400F626A7 /* ViewController.m in Sources */,
-				F20A5F9720479CA900E0B7F0 /* QZoneView.m in Sources */,
-				F20A5F9F2047A92000E0B7F0 /* CusttomDatePickView.m in Sources */,
-				184DD9CB2046F990002D2E9E /* LoginView.m in Sources */,
+				18BEDC272055973200ABB9F8 /* LoginView.m in Sources */,
+				F2A61ED420527B9E0000ADA8 /* MoreChooseView.m in Sources */,
+				F2A61EC420525F390000ADA8 /* HouseConditionFilterView.m in Sources */,
+				18BEDC292055973200ABB9F8 /* QZoneView.m in Sources */,
 				F2F05975204557E400F626A7 /* main.m in Sources */,
-				184DD9C52046F6B3002D2E9E /* SharePanelView.m in Sources */,
 				F2A61EB42050E2300000ADA8 /* PopAnimationTool.m in Sources */,
-				F2A61EA9204FD9A50000ADA8 /* RegisterView.m in Sources */,
+				18BEDC242055973200ABB9F8 /* ConditionFilterView.m in Sources */,
+				18BEDC2F2055973200ABB9F8 /* SideLeftBarView.m in Sources */,
 				F2F0599A2045583B00F626A7 /* PopView.m in Sources */,
-				184DD9C82046F856002D2E9E /* ConditionFilterView.m in Sources */,
+				18BEDC252055973200ABB9F8 /* CusttomDatePickView.m in Sources */,
+				18A613D520542C8F00BF516E /* PopSliderBelowStaticVar.m in Sources */,
+				F2A61ECE20527B7D0000ADA8 /* PriceChooseView.m in Sources */,
 				F20A5F9C2047A43F00E0B7F0 /* YLButton.m in Sources */,
 				F2F05967204557E400F626A7 /* AppDelegate.m in Sources */,
 			);

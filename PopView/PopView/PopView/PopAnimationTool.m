@@ -9,7 +9,7 @@
 #import "PopAnimationTool.h"
 
 @implementation PopAnimationTool
-+ (CABasicAnimation *)getShowPopAnimationWithType:(PopViewDirection)popDirecton contentView:(UIView *)contentView{
++ (CABasicAnimation *)getShowPopAnimationWithType:(PopViewDirection)popDirecton contentView:(UIView *)contentView belowView:(UIView *)belowView{
     CABasicAnimation *showAnima = [CABasicAnimation animation];
     showAnima.duration = animationDuration;
     showAnima.repeatCount = 1;
@@ -23,11 +23,11 @@
     CGFloat ScreenHeight = [UIScreen mainScreen].bounds.size.height;
     
     switch (popDirecton) {
-        case PopViewDirection_Left:
-        case PopViewDirection_Right:
-        case PopViewDirection_Top:
-        case PopViewDirection_Bottom:
-        case PopViewDirection_None:{
+        case PopViewDirection_PopUpLeft:
+        case PopViewDirection_PopUpRight:
+        case PopViewDirection_PopUpTop:
+        case PopViewDirection_PopUpBottom:
+        case PopViewDirection_PopUpNone:{
             showAnima.keyPath = @"transform";
             CATransform3D tofrom = CATransform3DMakeScale(1, 1, 1);
             CATransform3D from = CATransform3DMakeScale(0, 0, 1);
@@ -60,13 +60,18 @@
             showAnima.fromValue = [NSValue valueWithCGPoint:CGPointMake(ScreenWidth/2, ScreenHeight+height/2)];
             showAnima.toValue = [NSValue valueWithCGPoint:CGPointMake(ScreenWidth/2, ScreenHeight-height/2)];
             break;
+        case PopViewDirection_SlideBelowView:
+            showAnima.keyPath = @"position";
+            showAnima.fromValue = [NSValue valueWithCGPoint:CGPointMake(belowView.bounds.size.width/2, -contentView.bounds.size.height/2)];
+            showAnima.toValue = [NSValue valueWithCGPoint:CGPointMake(belowView.bounds.size.width/2, contentView.bounds.size.height/2)];
+            break;
         default:
             break;
     }
     return showAnima;
 }
 
-+ (CABasicAnimation *)getHidenPopAnimationWithType:(PopViewDirection)popDirecton contentView:(UIView *)contentView{
++ (CABasicAnimation *)getHidenPopAnimationWithType:(PopViewDirection)popDirecton contentView:(UIView *)contentView belowView:(UIView *)belowView{
     CABasicAnimation *hidenAnima = [CABasicAnimation animation];
     hidenAnima.duration = animationDuration;
     hidenAnima.fillMode = kCAFillModeForwards;
@@ -78,11 +83,11 @@
     CGFloat ScreenWidth = [UIScreen mainScreen].bounds.size.width;
     CGFloat ScreenHeight = [UIScreen mainScreen].bounds.size.height;
     switch (popDirecton) {
-        case PopViewDirection_Left:
-        case PopViewDirection_Right:
-        case PopViewDirection_Top:
-        case PopViewDirection_Bottom:
-        case PopViewDirection_None:{
+        case PopViewDirection_PopUpLeft:
+        case PopViewDirection_PopUpRight:
+        case PopViewDirection_PopUpTop:
+        case PopViewDirection_PopUpBottom:
+        case PopViewDirection_PopUpNone:{
             hidenAnima.keyPath = @"transform";
             CATransform3D tofrom = CATransform3DMakeScale(0, 0, 1);
             CATransform3D from = CATransform3DMakeScale(1, 1, 1);
@@ -114,6 +119,10 @@
             hidenAnima.fromValue = [NSValue valueWithCGPoint:CGPointMake(ScreenWidth/2, ScreenHeight-height/2)];
             hidenAnima.toValue = [NSValue valueWithCGPoint:CGPointMake(ScreenWidth/2, ScreenHeight+height/2)];
             break;
+        case PopViewDirection_SlideBelowView:
+            hidenAnima.keyPath = @"position";
+            hidenAnima.fromValue = [NSValue valueWithCGPoint:CGPointMake(belowView.bounds.size.width/2, contentView.bounds.size.height/2)];
+            hidenAnima.toValue = [NSValue valueWithCGPoint:CGPointMake(belowView.bounds.size.width/2, -contentView.bounds.size.height/2)];
         default:
             break;
     }

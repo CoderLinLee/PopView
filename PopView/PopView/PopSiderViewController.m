@@ -52,7 +52,7 @@
     
     self.loginView.center = self.view.center;
     self.loginView.backgroundColor = [UIColor whiteColor];
-    PopView *popView = [PopView showPopContentView:self.loginView showAnimation:showAnima hidenAnimation:hidenAnima];
+    PopView *popView = [PopView popContentView:self.loginView showAnimation:showAnima hidenAnimation:hidenAnima];
     popView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
     popView.clickOutHidden = NO;
 }
@@ -60,35 +60,35 @@
 - (IBAction)customAnimation:(id)sender {
     self.loginView.center = self.view.center;
     self.loginView.backgroundColor = [UIColor whiteColor];
-    PopView *popView = [PopView showSidePopDirect:PopViewDirection_SlideInCenter contentView:self.loginView];
+    PopView *popView = [PopView popSideContentView:self.loginView direct:PopViewDirection_SlideInCenter ];
     popView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
     popView.clickOutHidden = NO;
 }
 
 
 - (IBAction)customUpClick:(UIButton *)sender {
-    PopView *popView = [PopView showSidePopDirect:PopViewDirection_SlideFromUp contentView:self.qzoneView];
+    PopView *popView = [PopView popSideContentView:self.qzoneView direct:PopViewDirection_SlideFromUp];
     popView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
 }
 
 - (IBAction)customLeftClick:(id)sender {
-    PopView *popView = [PopView showSidePopDirect:PopViewDirection_SlideFromLeft contentView:self.sideLeftView];
+    PopView *popView = [PopView popSideContentView:self.sideLeftView direct:PopViewDirection_SlideFromLeft];
     popView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
     
 }
 - (IBAction)shareClick:(id)sender {
-    PopView *popView = [PopView showSidePopDirect:PopViewDirection_SlideFromBottom contentView:self.sharePanelView];
+    PopView *popView = [PopView popSideContentView:self.sharePanelView direct:PopViewDirection_SlideFromBottom];
     popView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
     
 }
 - (IBAction)customRightClick:(id)sender {
-    PopView *popView = [PopView showSidePopDirect:PopViewDirection_SlideFromRight contentView:self.filterView];
+    PopView *popView = [PopView popSideContentView:self.filterView direct:PopViewDirection_SlideFromRight];
     popView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
 }
 
 
 - (IBAction)datePickClick:(id)sender {
-    PopView *popView = [PopView showSidePopDirect:PopViewDirection_SlideFromBottom contentView:self.datePickView];
+    PopView *popView = [PopView popSideContentView:self.datePickView direct:PopViewDirection_SlideFromBottom];
     popView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
 }
 

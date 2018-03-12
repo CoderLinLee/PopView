@@ -9,14 +9,13 @@
 #import "PopView.h"
 #import "PopAnimationTool.h"
 
-@interface PopView()<CAAnimationDelegate>
+@interface PopView()<CAAnimationDelegate,UIGestureRecognizerDelegate>
 
 @property (nonatomic ,weak) UIView *contentView;
 @property (nonatomic ,weak) UIView *onView;
 @property (nonatomic ,assign) PopViewDirection direct;
 @property (nonatomic ,assign) BOOL animation;
 
-@property (nonatomic ,strong) UIView *defaultTriangleView;
 @property (nonatomic ,strong) UIView *triangleView;
 @property (nonatomic ,assign) CGFloat offset;
 @property (nonatomic ,strong) UIResponder *backCtl;
@@ -26,8 +25,8 @@
 @end
 
 @implementation PopView
-static  NSInteger const popViewTag              = 364;
 
+static  NSInteger const popViewTag              = 364;
 + (instancetype)getCurrentPopView{
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     PopView *oldPopView = (PopView *)[window viewWithTag:popViewTag];
@@ -35,13 +34,13 @@ static  NSInteger const popViewTag              = 364;
 }
 
 #pragma mark- popAnimation
-+ (instancetype)popContentView:(UIView *)contentView
++ (instancetype)popUpContentView:(UIView *)contentView
                         direct:(PopViewDirection)direct
                         onView:(UIView *)onView{
-    return [self popContentView:contentView direct:direct onView:onView offset:0 triangleView:nil animation:YES];
+    return [self popUpContentView:contentView direct:direct onView:onView offset:0 triangleView:nil animation:YES];
 }
 
-+ (instancetype)popContentView:(UIView *)contentView
++ (instancetype)popUpContentView:(UIView *)contentView
                         direct:(PopViewDirection)direct
                         onView:(UIView *)onView
                         offset:(CGFloat)offset
@@ -57,33 +56,64 @@ static  NSInteger const popViewTag              = 364;
                                             triangleView:triangleView
                                                animation:animation];
     [window addSubview:newPopView];
-    newPopView.showAnimation = [PopAnimationTool getShowPopAnimationWithType:direct contentView:contentView];
-    newPopView.hidenAnimation = [PopAnimationTool getHidenPopAnimationWithType:direct contentView:contentView];
+    newPopView.showAnimation = [PopAnimationTool getShowPopAnimationWithType:direct contentView:contentView belowView:nil];
+    newPopView.hidenAnimation = [PopAnimationTool getHidenPopAnimationWithType:direct contentView:contentView belowView:nil];
     
-    [newPopView setSubViewFrame];
-    [newPopView showPopViewWithOldPopView:oldPopView];
+    [newPopView setPopMenuSubViewFrame];
+    [newPopView animationPopContainerViewWithOldPopView:oldPopView];
     [newPopView bringSubviewToFront:newPopView.popContainerView];
     return newPopView;
 }
 
 
 #pragma mark- slideAnimation
-+ (instancetype)showSidePopDirect:(PopViewDirection)direction
-                      contentView:(UIView *)contentView{
-    CABasicAnimation *showAnimation = [PopAnimationTool getShowPopAnimationWithType:direction contentView:contentView];
-    CABasicAnimation *hidenAnimation = [PopAnimationTool getHidenPopAnimationWithType:direction contentView:contentView];
-    PopView *popView =  [self showPopContentView:contentView showAnimation:showAnimation hidenAnimation:hidenAnimation];
++ (instancetype)popSideContentView:(UIView *)contentView
+                            direct:(PopViewDirection)direction{
+    CABasicAnimation *showAnimation = [PopAnimationTool getShowPopAnimationWithType:direction contentView:contentView belowView:nil];
+    CABasicAnimation *hidenAnimation = [PopAnimationTool getHidenPopAnimationWithType:direction contentView:contentView belowView:nil];
+    
+    PopView *popView =  [self popContentView:contentView showAnimation:showAnimation hidenAnimation:hidenAnimation];
     popView.popContainerView.center = [showAnimation.toValue CGPointValue];
     return popView;
 }
 
-+ (instancetype)showPopContentView:(UIView *)contentView
++ (instancetype)popSideContentView:(UIView *)contentView
+                         belowView:(UIView *)belowView;{
+    PopViewDirection direction = PopViewDirection_SlideBelowView;
+    CABasicAnimation *showAnimation = [PopAnimationTool getShowPopAnimationWithType:direction contentView:contentView belowView:belowView];
+    CABasicAnimation *hidenAnimation = [PopAnimationTool getHidenPopAnimationWithType:direction contentView:contentView belowView:belowView];
+    CGRect frame = belowView.superview.bounds;
+    frame.origin.y = CGRectGetMaxY(belowView.frame);
+    frame.size.height -= CGRectGetMaxY(belowView.frame);
+    
+    PopView *oldPopView = (PopView *)[belowView.superview viewWithTag:popViewTag];
+    PopView *newPopView = [[PopView alloc] initWithFrame:frame
+                                                  direct:direction
+                                                  onView:nil
+                                             contentView:contentView
+                                                  offSet:0
+                                            triangleView:nil
+                                               animation:YES];
+    [belowView.superview insertSubview:newPopView belowSubview:belowView];
+    newPopView.popContainerView.frame = contentView.frame;
+    [newPopView.popContainerView addSubview:contentView];
+    newPopView.clipsToBounds = YES;
+    
+    newPopView.showAnimation = showAnimation;
+    newPopView.hidenAnimation = hidenAnimation;
+    
+    [newPopView animationPopContainerViewWithOldPopView:oldPopView];
+    newPopView.popContainerView.center = [showAnimation.toValue CGPointValue];
+    return newPopView;
+}
+
++ (instancetype)popContentView:(UIView *)contentView
                      showAnimation:(CABasicAnimation *)showAnimation
                     hidenAnimation:(CABasicAnimation *)hidenAnimation{
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     PopView *oldPopView = (PopView *)[window viewWithTag:popViewTag];
     PopView *newPopView = [[PopView alloc] initWithFrame:window.bounds
-                                                  direct:PopViewDirection_None
+                                                  direct:PopViewDirection_PopUpNone
                                                   onView:nil
                                              contentView:contentView
                                                   offSet:0
@@ -98,10 +128,11 @@ static  NSInteger const popViewTag              = 364;
     newPopView.showAnimation = showAnimation;
     newPopView.hidenAnimation = hidenAnimation;
 
-    [newPopView showPopViewWithOldPopView:oldPopView];
+    [newPopView animationPopContainerViewWithOldPopView:oldPopView];
     [newPopView bringSubviewToFront:newPopView.popContainerView];
     return newPopView;
 }
+
 
 - (instancetype)initWithFrame:(CGRect)frame
                        direct:(PopViewDirection)direct
@@ -131,7 +162,7 @@ static  NSInteger const popViewTag              = 364;
     return self;
 }
 
-- (void)setSubViewFrame{
+- (void)setPopMenuSubViewFrame{
     CGRect triangleFrame = self.triangleView.bounds;
     CGRect contentFrame = self.contentView.bounds;
     CGRect popContentFrame = CGRectZero;
@@ -140,7 +171,7 @@ static  NSInteger const popViewTag              = 364;
     CGPoint anchorPoint = CGPointMake(.5, .5);
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     switch (self.direct) {
-        case PopViewDirection_Bottom:
+        case PopViewDirection_PopUpBottom:
             //1、计算在window上的位置
             //1.2、计算指示器在window的位置
             triangleFrame.origin.y = CGRectGetMaxY(onViewFrame);
@@ -177,7 +208,7 @@ static  NSInteger const popViewTag              = 364;
             self.popContainerView.layer.anchorPoint = anchorPoint;
             self.popContainerView.layer.position = CGPointMake(onViewFrame.origin.x + onViewFrame.size.width/2, CGRectGetMaxY(onViewFrame));
             break;
-        case PopViewDirection_Top:
+        case PopViewDirection_PopUpTop:
             //1、计算在window上的位置
             //1.2、计算指示器在window的位置
             triangleFrame.origin.y = onViewFrame.origin.y;
@@ -216,7 +247,7 @@ static  NSInteger const popViewTag              = 364;
             self.popContainerView.layer.position = CGPointMake(onViewFrame.origin.x + onViewFrame.size.width/2, onViewFrame.origin.y);
             
             break;
-        case PopViewDirection_Right:
+        case PopViewDirection_PopUpRight:
             
             //1、计算在window上的位置
             //1.2、计算指示器在window的位置
@@ -265,7 +296,7 @@ static  NSInteger const popViewTag              = 364;
             }
             break;
             
-        case PopViewDirection_Left:
+        case PopViewDirection_PopUpLeft:
             
             //1、计算在window上的位置
             //1.2、计算指示器在window的位置
@@ -306,7 +337,7 @@ static  NSInteger const popViewTag              = 364;
             self.popContainerView.layer.anchorPoint = anchorPoint;
             self.popContainerView.layer.position = CGPointMake(onViewFrame.origin.x, onViewFrame.origin.y + onViewFrame.size.height/2);
             break;
-        case PopViewDirection_None:
+        case PopViewDirection_PopUpNone:
             self.contentView.frame = self.contentView.bounds;
             self.popContainerView.frame = self.contentView.bounds;
             self.popContainerView.center = window.center;
@@ -315,12 +346,6 @@ static  NSInteger const popViewTag              = 364;
         default:
             break;
     }
-}
-
-
-#pragma mark- events
--(void)popContentViewTapClick{
-    [[UIApplication sharedApplication].keyWindow endEditing:YES];
 }
 
 - (void)backClick{
@@ -332,56 +357,43 @@ static  NSInteger const popViewTag              = 364;
     [[UIApplication sharedApplication].keyWindow endEditing:YES];
 }
 
+//处理响应者链
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
+    UIView *responseView = nil;
     CGRect iframe = [self.responseOnView convertRect:self.responseOnView.bounds toView:nil];
     if (CGRectContainsPoint(iframe, point)) {
         for (UIView *view in self.responseOnView.subviews) {
             CGRect subIframe = [view convertRect:view.bounds toView:nil];
             if (CGRectContainsPoint(subIframe, point)) {
                 [PopView hidenPopView];
-                return view;
+                responseView = view;
             }
         }
-        return self.responseOnView;
+        if (responseView == nil) {
+            responseView = self.responseOnView;
+        }
     }
-    return [super hitTest:point withEvent:event];
+    responseView = [super hitTest:point withEvent:event];
+    //不是两个输入框切换的时候
+    if (![responseView isKindOfClass:[UITextView class]] && ![responseView isKindOfClass:[UITextField class]] && responseView != self.backCtl) {
+         [[UIApplication sharedApplication].keyWindow endEditing:YES];
+    }
+    return responseView;
 }
 
 
 
 #pragma mark - animation
-- (void)showPopViewWithOldPopView:(PopView *)oldPopView{
+- (void)animationPopContainerViewWithOldPopView:(PopView *)oldPopView{
     if (oldPopView) {
+        if (oldPopView.willRemovedFromeSuperView) {
+            oldPopView.willRemovedFromeSuperView();
+        }
         [oldPopView removeFromSuperview];
     }
     UIColor *color = self.backgroundColor;
     [self.popContainerView.layer addAnimation:self.showAnimation forKey:nil];
     [self animationBackGroundColor:[UIColor clearColor] toColor:color];
-}
-
-+ (void)hidenPopView{
-    if (keyboardShow) {
-        [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
-    }else{
-        UIWindow *window = [UIApplication sharedApplication].keyWindow;
-        PopView *popView = (PopView *)[window viewWithTag:popViewTag];
-        if (popView && ![popView.popContainerView.layer animationForKey:@"hiddenAnimation"]) {
-            if (popView.animation && popView.hidenAnimation) {
-                popView.hidenAnimation.removedOnCompletion = NO;
-                [popView.popContainerView.layer addAnimation:popView.hidenAnimation forKey:@"hiddenAnimation"];
-                [popView animationBackGroundColor:popView.backgroundColor toColor:[UIColor clearColor]];
-
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(popView.hidenAnimation.duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    if (popView.clickOutHidenComplete) {
-                        popView.clickOutHidenComplete();
-                    }
-                    [popView removeFromSuperview];
-                });
-            }else{
-                [popView removeFromSuperview];
-            }
-        }
-    }
 }
 
 - (void)animationBackGroundColor:(UIColor*)fromeColor toColor:(UIColor *)toColor{
@@ -393,6 +405,40 @@ static  NSInteger const popViewTag              = 364;
     animation.removedOnCompletion = NO;
     [self.layer addAnimation:animation forKey:@"backgroundColor"];
 }
+
++ (void)hidenPopView{
+    if (keyboardShow) {
+        [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
+    }else{
+        UIView *superView = [UIApplication sharedApplication].keyWindow;
+        PopView *popView = (PopView *)[superView viewWithTag:popViewTag];
+        if (popView && ![popView.popContainerView.layer animationForKey:@"hiddenAnimation"]) {
+            if (popView.willRemovedFromeSuperView) {
+                popView.willRemovedFromeSuperView();
+            }
+            if (popView.animation && popView.hidenAnimation) {
+                popView.hidenAnimation.removedOnCompletion = NO;
+                [popView.popContainerView.layer addAnimation:popView.hidenAnimation forKey:@"hiddenAnimation"];
+                [popView animationBackGroundColor:popView.backgroundColor toColor:[UIColor clearColor]];
+    
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(popView.hidenAnimation.duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [popView removeFromSuperview];
+                });
+            }else{
+                [popView removeFromSuperview];
+            }
+        }
+    }
+}
+
+- (void)removeFromSuperview{
+    if (self.didRemovedFromeSuperView) {
+        self.didRemovedFromeSuperView();
+    }
+    [super removeFromSuperview];
+}
+
+
 
 #pragma mark-处理键盘
 -(void)addKeyboardNotification{
@@ -410,7 +456,6 @@ static CGRect popViewOriginRect;
     if (CGRectEqualToRect(popViewOriginRect, CGRectZero)) {
         popViewOriginRect = self.popContainerView.frame;
     }
-    
     keyboardShow = YES;
     NSDictionary *userInfo = [notification userInfo];
     NSValue *value = [userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
@@ -418,7 +463,8 @@ static CGRect popViewOriginRect;
     CGFloat animationDuration = [[userInfo valueForKey:@"UIKeyboardAnimationDurationUserInfoKey"] floatValue];
     UIView *responsInputView = [self responsInputViewOnView:self.popContainerView];
     if (responsInputView) {
-        CGRect inputViewFrame = [responsInputView convertRect:responsInputView.bounds toView:self];
+        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        CGRect inputViewFrame = [responsInputView convertRect:responsInputView.bounds toView:window];
         if (CGRectGetMaxY(inputViewFrame)+self.keyBoardMargin>=keyBoardEndY) {
             [UIView animateWithDuration:animationDuration animations:^{
                 CGRect _frame = self.popContainerView.frame;
@@ -442,6 +488,7 @@ static CGRect popViewOriginRect;
     keyboardShow = NO;
 }
 
+//找到输入框
 - (UIView *)responsInputViewOnView:(UIView *)onView{
     for (UIView *view in onView.subviews) {
         if (([view isKindOfClass:[UITextField class]] || [view isKindOfClass:[UITextView class]]) && view.isFirstResponder) {
@@ -459,69 +506,60 @@ static CGRect popViewOriginRect;
 
 #pragma mark-lazy
 - (UIView *)defaultTriangleView{
-    if (_defaultTriangleView == nil) {
-        CGPoint point1 = CGPointZero;
-        CGPoint point2 = CGPointZero;
-        CGPoint point3 = CGPointZero;
-        CGRect triangleFrame = CGRectZero;
-        switch (self.direct) {
-            case PopViewDirection_Left:
-                point1 = CGPointMake(10, 10);
-                point2 = CGPointMake(0, 0);
-                point3 = CGPointMake(0, 20);
-                triangleFrame.size = CGSizeMake(10, 20);
-                break;
-            case PopViewDirection_Right:
-                point1 = CGPointMake(0, 10);
-                point2 = CGPointMake(10, 20);
-                point3 = CGPointMake(10, 0);
-                triangleFrame.size = CGSizeMake(10, 20);
-                break;
-            case PopViewDirection_Bottom:
-                point1 = CGPointMake(10, 0);
-                point2 = CGPointMake(20, 10);
-                point3 = CGPointMake(0, 10);
-                triangleFrame.size = CGSizeMake(20, 10);
-                
-                break;
-            case PopViewDirection_Top:
-                point1 = CGPointMake(0, 0);
-                point2 = CGPointMake(20, 0);
-                point3 = CGPointMake(10, 10);
-                triangleFrame.size = CGSizeMake(20, 10);
-                break;
-            default:
-                break;
-        }
-        
-        UIBezierPath *path = [UIBezierPath bezierPath];
-        
-        [path moveToPoint:point1];
-        [path addLineToPoint:point2];
-        [path addLineToPoint:point3];
-        [path closePath];
-        
-        CAShapeLayer *triangleLayer = [CAShapeLayer layer];
-        triangleLayer.fillColor = self.contentView.backgroundColor.CGColor;
-        triangleLayer.path = path.CGPath;
-        
-        UIView *defaultTriangleView = [[UIView alloc] initWithFrame:triangleFrame];
-        [defaultTriangleView.layer addSublayer:triangleLayer];
-        _defaultTriangleView = defaultTriangleView;
+    CGPoint point1 = CGPointZero;
+    CGPoint point2 = CGPointZero;
+    CGPoint point3 = CGPointZero;
+    CGRect triangleFrame = CGRectZero;
+    switch (self.direct) {
+        case PopViewDirection_PopUpLeft:
+            point1 = CGPointMake(10, 10);
+            point2 = CGPointMake(0, 0);
+            point3 = CGPointMake(0, 20);
+            triangleFrame.size = CGSizeMake(10, 20);
+            break;
+        case PopViewDirection_PopUpRight:
+            point1 = CGPointMake(0, 10);
+            point2 = CGPointMake(10, 20);
+            point3 = CGPointMake(10, 0);
+            triangleFrame.size = CGSizeMake(10, 20);
+            break;
+        case PopViewDirection_PopUpBottom:
+            point1 = CGPointMake(10, 0);
+            point2 = CGPointMake(20, 10);
+            point3 = CGPointMake(0, 10);
+            triangleFrame.size = CGSizeMake(20, 10);
+            break;
+        case PopViewDirection_PopUpTop:
+            point1 = CGPointMake(0, 0);
+            point2 = CGPointMake(20, 0);
+            point3 = CGPointMake(10, 10);
+            triangleFrame.size = CGSizeMake(20, 10);
+            break;
+        default:
+            break;
     }
-    return _defaultTriangleView;
+    
+    UIBezierPath *path = [UIBezierPath bezierPath];
+    [path moveToPoint:point1];
+    [path addLineToPoint:point2];
+    [path addLineToPoint:point3];
+    [path closePath];
+    
+    CAShapeLayer *triangleLayer = [CAShapeLayer layer];
+    triangleLayer.fillColor = self.contentView.backgroundColor.CGColor;
+    triangleLayer.path = path.CGPath;
+    
+    UIView *defaultTriangleView = [[UIView alloc] initWithFrame:triangleFrame];
+    [defaultTriangleView.layer addSublayer:triangleLayer];
+    return defaultTriangleView;
 }
-
 
 - (UIView *)popContainerView{
     if (_popContainerView == nil) {
         _popContainerView = [[UIView alloc] init];
         [self addSubview:_popContainerView];
-        UITapGestureRecognizer *tapGest = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(popContentViewTapClick)];
-        [_popContainerView addGestureRecognizer:tapGest];
     }
     return _popContainerView;
 }
-
 @end
 

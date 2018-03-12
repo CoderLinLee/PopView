@@ -37,17 +37,25 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yar-Us-aXI">
                                 <rect key="frame" x="101" y="150" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="弹出框"/>
                                 <connections>
                                     <segue destination="F5w-jU-bR3" kind="show" id="2FO-cd-hfG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1F3-29-4pf">
-                                <rect key="frame" x="101" y="309" width="46" height="30"/>
+                                <rect key="frame" x="101" y="206" width="62" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="侧边滑入"/>
                                 <connections>
                                     <segue destination="nPt-RK-U2u" kind="show" id="q4B-va-HrM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Hk-TT-wjt">
+                                <rect key="frame" x="101" y="295" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="菜单弹出"/>
+                                <connections>
+                                    <segue destination="qBR-8x-J73" kind="show" id="IGf-gI-fbf"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -232,7 +240,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DSY-pf-Ywf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="613.60000000000002" y="460.11994002998506"/>
+            <point key="canvasLocation" x="614" y="295"/>
+        </scene>
+        <!--Pop Slider Below View View Controller-->
+        <scene sceneID="9ea-tL-aoC">
+            <objects>
+                <viewController id="qBR-8x-J73" customClass="PopSliderBelowViewViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qbt-hn-pvX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="018-6f-ScM"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BFS-Ak-Pwm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="613.60000000000002" y="1005.2473763118442"/>
         </scene>
     </scenes>
 </document>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HouseConditionFilterView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="90I-VT-qUt">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwh-VH-Ba6" customClass="YLButton">
+                            <rect key="frame" x="0.0" y="0.0" width="94" height="50"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="区域" image="triangle_icon">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <state key="selected">
+                                <color key="titleColor" red="0.92941176469999998" green="0.43529411759999997" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="regionBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="3ka-tw-Mhh"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qrl-z2-gvh" customClass="YLButton">
+                            <rect key="frame" x="281" y="0.0" width="94" height="50"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="更多" image="triangle_icon">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <state key="selected">
+                                <color key="titleColor" red="0.92941176469999998" green="0.43529411759999997" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="moreBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="uzn-8d-2Bs"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6BF-W0-O5c" customClass="YLButton">
+                            <rect key="frame" x="187.5" y="0.0" width="93.5" height="50"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="房型" image="triangle_icon">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <state key="selected">
+                                <color key="titleColor" red="0.92941176469999998" green="0.43529411759999997" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="houseNumBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="u2K-ge-hHy"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQu-gj-FWg" customClass="YLButton">
+                            <rect key="frame" x="94" y="0.0" width="93.5" height="50"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="租金" image="triangle_icon">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <state key="selected">
+                                <color key="titleColor" red="0.92941176469999998" green="0.43529411759999997" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="priceBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="xEF-3T-tM4"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="xQu-gj-FWg" firstAttribute="leading" secondItem="bwh-VH-Ba6" secondAttribute="trailing" id="3Io-bB-fJR"/>
+                        <constraint firstAttribute="bottom" secondItem="Qrl-z2-gvh" secondAttribute="bottom" id="BSo-Qw-rZs"/>
+                        <constraint firstItem="6BF-W0-O5c" firstAttribute="top" secondItem="90I-VT-qUt" secondAttribute="top" id="DXT-au-hDS"/>
+                        <constraint firstAttribute="bottom" secondItem="xQu-gj-FWg" secondAttribute="bottom" id="MWb-04-lP2"/>
+                        <constraint firstItem="Qrl-z2-gvh" firstAttribute="top" secondItem="90I-VT-qUt" secondAttribute="top" id="Og4-T1-KQj"/>
+                        <constraint firstAttribute="bottom" secondItem="6BF-W0-O5c" secondAttribute="bottom" id="QjR-nW-Mz9"/>
+                        <constraint firstAttribute="bottom" secondItem="bwh-VH-Ba6" secondAttribute="bottom" id="RVC-TT-sWw"/>
+                        <constraint firstItem="Qrl-z2-gvh" firstAttribute="width" secondItem="bwh-VH-Ba6" secondAttribute="width" id="TVW-2w-Jsw"/>
+                        <constraint firstItem="6BF-W0-O5c" firstAttribute="leading" secondItem="xQu-gj-FWg" secondAttribute="trailing" id="Z2X-0L-I42"/>
+                        <constraint firstItem="bwh-VH-Ba6" firstAttribute="top" secondItem="90I-VT-qUt" secondAttribute="top" id="a7F-t0-efy"/>
+                        <constraint firstItem="6BF-W0-O5c" firstAttribute="width" secondItem="bwh-VH-Ba6" secondAttribute="width" id="bkn-B7-8ab"/>
+                        <constraint firstAttribute="height" constant="50" id="j2P-hC-0qr"/>
+                        <constraint firstItem="xQu-gj-FWg" firstAttribute="width" secondItem="bwh-VH-Ba6" secondAttribute="width" id="lrW-sb-Tw8"/>
+                        <constraint firstAttribute="trailing" secondItem="Qrl-z2-gvh" secondAttribute="trailing" id="uiu-aa-33X"/>
+                        <constraint firstItem="xQu-gj-FWg" firstAttribute="top" secondItem="90I-VT-qUt" secondAttribute="top" id="xUn-DL-NgZ"/>
+                        <constraint firstItem="bwh-VH-Ba6" firstAttribute="leading" secondItem="90I-VT-qUt" secondAttribute="leading" id="xkR-cE-USx"/>
+                        <constraint firstItem="Qrl-z2-gvh" firstAttribute="leading" secondItem="6BF-W0-O5c" secondAttribute="trailing" id="xqn-9g-UIT"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tJa-hP-FQy">
+                    <rect key="frame" x="0.0" y="50" width="375" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="kQy-nx-fS8"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="tJa-hP-FQy" secondAttribute="trailing" id="2yJ-6i-g1d"/>
+                <constraint firstItem="tJa-hP-FQy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="UMS-eX-aSl"/>
+                <constraint firstItem="90I-VT-qUt" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="ZO8-2i-Rhf"/>
+                <constraint firstItem="tJa-hP-FQy" firstAttribute="top" secondItem="90I-VT-qUt" secondAttribute="bottom" id="rb4-LE-vXv"/>
+                <constraint firstItem="90I-VT-qUt" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="sxR-Wh-lMs"/>
+                <constraint firstItem="90I-VT-qUt" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="vad-Kr-Eek"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="houseNumBtn" destination="6BF-W0-O5c" id="tMV-vL-TTi"/>
+                <outlet property="linViewHeightConstraint" destination="kQy-nx-fS8" id="Ecl-5d-6fH"/>
+                <outlet property="lineView" destination="tJa-hP-FQy" id="jJE-Pl-UIg"/>
+                <outlet property="moreBtn" destination="Qrl-z2-gvh" id="7KW-U8-O3G"/>
+                <outlet property="priceBtn" destination="xQu-gj-FWg" id="UTJ-kY-8Ba"/>
+                <outlet property="regionBtn" destination="bwh-VH-Ba6" id="Gyn-va-se8"/>
+            </connections>
+            <point key="canvasLocation" x="9.5" y="149.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="triangle_icon" width="17" height="17"/>
+    </resources>
+</document>

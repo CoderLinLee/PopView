@@ -29,29 +29,29 @@
 }
 
 - (IBAction)downClick:(id)sender {
-    PopView *popView = [PopView popContentView:self.popListView direct:PopViewDirection_Bottom onView:sender];
+    PopView *popView = [PopView popUpContentView:self.popListView direct:PopViewDirection_PopUpBottom onView:sender];
     popView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
 }
 
 - (IBAction)rightClick:(id)sender {
     UIImageView *triangleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"elementSelect_icon"]];
     triangleView.bounds = CGRectMake(0, 0, triangleView.image.size.width*1.5, triangleView.image.size.height*1.5);
-    PopView *popView = [PopView popContentView:self.popListView direct:PopViewDirection_Right onView:sender offset:60 triangleView:triangleView animation:YES];
+    PopView *popView = [PopView popUpContentView:self.popListView direct:PopViewDirection_PopUpRight onView:sender offset:60 triangleView:triangleView animation:YES];
     popView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
     self.popListView = nil;
 }
 
 - (IBAction)upClick:(id)sender {
-    [PopView popContentView:self.popListView direct:PopViewDirection_Top onView:sender];
+    [PopView popUpContentView:self.popListView direct:PopViewDirection_PopUpTop onView:sender];
 }
 
 - (IBAction)leftClick:(id)sender {
-    PopView *popView = [PopView popContentView:self.popListView direct:PopViewDirection_Left onView:sender];
+    PopView *popView = [PopView popUpContentView:self.popListView direct:PopViewDirection_PopUpLeft onView:sender];
     popView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
 }
 
 - (IBAction)midClick:(id)sender {
-    PopView *popView = [PopView popContentView:self.midContentView direct:PopViewDirection_None onView:sender];
+    PopView *popView = [PopView popUpContentView:self.midContentView direct:PopViewDirection_PopUpNone onView:sender];
     popView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
     popView.clickOutHidden = NO;
 }
